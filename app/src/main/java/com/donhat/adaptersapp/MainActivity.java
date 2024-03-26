@@ -1,7 +1,6 @@
 package com.donhat.adaptersapp;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -30,13 +29,9 @@ public class MainActivity extends AppCompatActivity {
         String[] countries = {"USA", "Germany", "Saudi Arabia", "French"};
 
         // 3 - Adapter: acts as a bridge between the 'Data Source' and the 'AdapterView'
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                countries
-        );
+        CountryAdapter countryAdapter = new CountryAdapter(this, countries);
 
         // 4 - Link AdapterView with the Adapter
-        listView.setAdapter(adapter);
+        listView.setAdapter(countryAdapter);
     }
 }
